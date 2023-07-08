@@ -19,8 +19,8 @@ resource "google_compute_network" "vpc_network" {
   name = "terraform-network"
 }
 
-resource "null-resource" "run-playbook" {
-  provisioner "local-exec" {
-    command = "sudo ansible-playbook /root/Ansible_ws/mainplaybook.yml"
-  }
-}
+//resource "null-resource" "run-playbook" {
+  //provisioner "local-exec" {
+    //command = "sudo ansible-playbook /root/Ansible_ws/mainplaybook.yml"
+  //}
+//}

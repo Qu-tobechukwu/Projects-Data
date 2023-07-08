@@ -1,0 +1,23 @@
+# Install Maven
+---
+- hosts: MavenServers
+  become: yes
+  tasks:
+  
+   -yum: wget
+    name: install git, java-1.8.0, 
+    status: present
+  loop:
+   -git
+   -wget
+   -nano
+   -tree
+   -unzip
+   -java-11-openjdk-devel
+   -java-1.8.0-openjdk-devel
+  
+
+   -name: Install Maven
+    ansible.builtin.get_url:  
+     url: https://dlcdn.apache.org/maven/maven-3/3.8.8/binaries/apache-maven-3.8.8-bin.zip
+     dest: /opt/maven-3.8.8-bin.zip

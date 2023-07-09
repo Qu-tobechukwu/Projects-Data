@@ -19,6 +19,13 @@ resource "google_compute_network" "vpc_network" {
   name = "terraform-network"
 }
 
+terraform {
+  backend "gcs" {
+    bucket = "webapp-tf"
+    prefix = "three-tier-app"
+  }
+}
+
 //resource "null-resource" "run-playbook" {
   //provisioner "local-exec" {
     //command = "sudo ansible-playbook /root/Ansible_ws/mainplaybook.yml"
